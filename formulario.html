@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cliente</title>
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Formulario de Cliente</h1>
+    </header>
+
+    <section class="formulario">
+        <h2>Información del Cliente</h2>
+        <form action="#" method="post" id="clienteForm">
+            <!-- Campo oculto para almacenar el nombre del auto seleccionado -->
+            <input type="hidden" id="autoSeleccionado" name="autoSeleccionado">
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br><br>
+
+            <label for="departamento">Departamento:</label>
+            <input type="text" id="departamento" name="departamento" required><br><br>
+
+            <label for="municipio">Municipio:</label>
+            <input type="text" id="municipio" name="municipio" required><br><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Catálogo de Autos</p>
+    </footer>
+
+    <script>
+        // Obtener el parámetro de la URL (auto seleccionado)
+        const params = new URLSearchParams(window.location.search);
+        const auto = params.get('auto');
+
+        // Asignar el valor del auto seleccionado al campo oculto
+        document.getElementById('autoSeleccionado').value = auto;
+    </script>
+</body>
+</html>
